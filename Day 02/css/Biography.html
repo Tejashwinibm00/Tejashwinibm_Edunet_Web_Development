@@ -6,13 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <div style="width: 80%; align-self: center;">
-        <header id="outerhead">
+    <section style="width: 80%; align-self: center;">
+        <section id="outerhead">
             <section id="imagesec">
-                <img src="C:\Users\117\Desktop\TEJASHWINI B M - Edunet\Day 02\images,audio,video\WhatsApp Image 2025-10-14 at 11.10.21 AM.jpeg" width="100px" height="150px" alt="">
+                <img src="C:\Users\HP\Documents\Tejashwinibm_Edunet_Web_Development\Day 02\images,audio,video\WhatsApp Image 2025-10-14 at 11.10.21 AM.jpeg.jpeg" width="150px" height="240px">
             </section>
-            <section>
-            <header> My Biography</header>
+            <section id="biosec">
+            <header id="bioheader" class="abc">My Biography</header>
             <ul type="square">
             <li>Name : TEJASHWINI B M</li>
             <li>Birth Date : 16 April 2006</li>
@@ -21,7 +21,7 @@
             <li>Religion : Hindu</li>
             </ul>
             </section>
-        </header>
+        </section>
     <main>
         <header>About Me</header>
             <p>My name is Tejashwini B M . I am a B.E(ISE) student in City Engineering College , Doddakallasandra</p>
@@ -33,16 +33,23 @@
                 <li>linkedIn.com</li>
             </ul>
             </footer>
-    </div>
+        </section>
     <link rel="stylesheet" href="C:\Users\117\Desktop\TEJASHWINI B M - Edunet\Day 02\css\style.css">
     <style>
+        #outerhead {
+            display: flex;
+            align-items: first start;
+            gap: 5px;
+            margin-bottom: 0px;
+            border: 2px solid black;
+        }
         #imagesec{
             display:inline-block;
-            width:100%;
-            background-color:lightblue;
-            text-align:left;
+            width:20%;
+            background-color:palevioletred;
+            text-align:center;
             font-size:24px;
-            font-weight:bold; 
+            font-weight:bold;
         } 
         header{
             background-color: lightblue;
@@ -62,10 +69,21 @@
             border: 2px solid black ;
             height: 400px;
         }
-        #outerhead {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
+        #outerhead section:nth-child(2) {
+           flex: 1;
+           background-color: lightskyblue;
+           padding: 30px;
+        }
+         #biosec
+        {
+            display:inline-block;
+            width:76%;
+            vertical-align:top;
+        }
+        .abc
+        {
+            border: 2px solid black;
+            text-align: center;
         }
     </style>
 </body>
