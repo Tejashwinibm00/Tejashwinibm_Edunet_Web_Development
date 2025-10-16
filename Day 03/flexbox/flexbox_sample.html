@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="item item1">Item 1</div>
+        <div class="item item2">Item 2</div>
+        <div class="item item3">Item 3</div>
+        <div class="item item3">Item 4</div>
+        <div class="item item3">Item 5</div>
+    </div>
+
+    <style>
+        .container div{
+            background-color: lightgreen;
+            border: 2px solid black;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+            flex-grow: 1;/*1st property of child*/
+            flex-shrink: 1;/*1st property of child*/
+        }
+        .container
+        {
+            display: flex;
+            flex-direction: row;
+            background-color: lightpink;
+            height: auto;
+            /*flex-flow: wrap;*/
+            justify-content: space-evenly;/* flex-start, flex-end, center , Space-around , space-evenly , space-between (for horizontal)*/
+            align-items: center;/* flex-start, flex-end, center ,stretch , baseline (for vertical)*/
+            /*align-content is used when there is multiple align-items*/
+        }
+        .item2
+        {
+            order: -1;/*(-1)->towards left , (1)->towards right*/ 
+            align-self: flex-start;/*overrides align-self for individual align-items*/
+        }
+    </style>
+</body>
+</html>

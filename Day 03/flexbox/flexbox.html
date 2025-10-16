@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="item item1">Item 1</div>
+        <div class="item item2">Item 2</div>
+        <div class="item item3">Item 3</div>
+    </div>
+
+    <style>
+        .container div{
+            background-color: lightgreen;
+            border: 2px solid black;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+        }
+        .container
+        {
+            display: flex;
+            flex-direction: row;
+            background-color: lightpink;
+            height: 100vh;
+            /*flex-flow: wrap;*/
+            justify-content: flex-end;/* flex-start, flex-end, center , Space-around , space-evenly , space-between (for horizontal)*/
+            align-items: baseline;/* flex-start, flex-end, center ,stretch , baseline (for vertical)*/
+            /*align-content is used when there is multiple align-items*/
+        }
+        .item
+        {
+            display: flex;
+            background-color: lightsalmon;
+            padding: 20px;
+            height: 70vh;
+        }
+    </style>
+</body>
+</html>
