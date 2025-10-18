@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reverse String</title>
+</head>
+<body>
+  <br>
+  <input type="text" id="fnum" placeholder="Enter name here">
+  <br><br>
+  <input type="submit" value="Reverse" onclick="reverseString()">
+  <br><br>
+  <input type="text" id="result">
+
+  <script>
+    function reverseString() {
+      let fn = document.getElementById("fnum").value;
+      let reversed = fn.split("").reverse().join("");  // ✅ Correct way
+      document.getElementById("result").value = reversed;
+      console.log(reversed);
+    }
+  </script>
+</body>
+</html>
