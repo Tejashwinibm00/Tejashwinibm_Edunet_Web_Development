@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="name" placeholder="Enter your name"><br><br>
+    <input type="email" name="email" placeholder="Enter your email"><br><br>
+    <input type="tel" name="phone" placeholder="Enter your phone number"><br><br>
+    <input type="button" value="Validate" onclick="validateInputs()">
+    <script>
+        const nameregex = /^[A-Z][a-zA-Z ]{3,15}$/;
+        const emailregex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        const phregex = /^[6-9][0-9]{9}$/;
+
+        const nameEl = document.getElementsByName("name")[0];
+        const emailEl = document.getElementsByName("email")[0];
+        const phoneEl = document.getElementsByName("phone")[0];
+            
+        function markField(el, valid) {
+            if (!valid) {
+            el.style.border = "1px solid red";
+            } else {
+            el.style.border = "";
+            }
+        }
+
+            nameEl.addEventListener("blur", function() {
+                markField(nameEl, nameregex.test(nameEl.value));
+            });
+
+            emailEl.addEventListener("blur", function() {
+                markField(emailEl, emailregex.test(emailEl.value));
+            });
+
+
+            phoneEl.addEventListener("blur", function() {
+                markField(phoneEl, phregex.test(phoneEl.value));
+            });
+
+            // Validate all inputs on button click; only alert if there are errors
+            function validateInputs() {
+                const errors = [];
+
+                if (!nameregex.test(nameEl.value)) {
+                errors.push("Invalid name (start with capital, 4-16 chars)");
+                markField(nameEl, false);
+                }
+
+                if (!emailregex.test(emailEl.value)) {
+                errors.push("Invalid email address");
+                markField(emailEl, false);
+                }
+
+                if (!phregex.test(phoneEl.value)) {
+                errors.push("Invalid phone number");
+                markField(phoneEl, false);
+                }
+
+                if (errors.length > 0) {
+                alert(errors.join("\n"));
+                return false;
+                }
+
+                // all valid — do nothing (no alert)
+                return true;
+            }
+    </script>
+</body>
+</html>

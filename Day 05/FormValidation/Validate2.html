@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="name" placeholder="Enter your name"><br><br>
+    <input type="button" value="Validate" onclick="validateInputs()">
+    <script>
+            const nameregex = /^[A-Z][a-zA-Z ]{3,15}$/;
+
+            const nameEl = document.getElementsByName("name")[0];
+
+            function validateInputs() {
+                const name = nameEl.value;
+
+                if (!nameregex.test(name)) {
+                    alert("Invalid Name: Name should start with a capital letter and be 4-16 characters long.");
+                    nameEl.focus();
+                    return false;
+                } else {
+                    alert("Name is valid!");
+                }
+
+                return true;
+            }
+    </script>
+</body>
+</html>
